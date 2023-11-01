@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 This is Nuggets. page
+    p Welcome to Pug #{title}
+    - const results = [ { name: 'vegNuggets', size: 'Medium', price: 20 }, { name: 'PotatoNuggets', size: 'Large', price: 30 }, { name: 'CarrotNuggets', size: 'Small', price: 15 }]
+
+    div.container-fluid
+    div.row
+        each item in results
+            div.col-sm-2
+            div
+            p Name: #{item.name}
+            p Size: #{item.size}
+            p Price: $#{item.price}
+       
+        
