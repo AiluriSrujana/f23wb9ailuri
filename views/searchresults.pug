@@ -7,11 +7,16 @@ block content
 
     div.container-fluid
     div.row
-        each item in results
+        each item,index in results
             div.col-sm-2
             div
-            p Name: #{item.name}
-            p Size: #{item.size}
-            p Price: $#{item.price}
+            div(class="col-sm-2" onclick=`buy (${index})`) Name: #{item.name}
+            div(class="col-sm-2" onclick=`buy (${index})`) Size: #{item.size}
+            div(class="col-sm-2" onclick=`buy (${index})`) Price: $#{item.price}
+    script.
+      function buy(itemNum){
+        alert(`you purchased item ${itemNum+1}`)
+     }
+
        
         
